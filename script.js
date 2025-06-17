@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             // Google Apps Script エンドポイント（実運用URL）
-const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzuGcN5yYA7XWVrhvD43dB8ypgxSZUTWP6id0cJ610c3dN4YYRazaxP_KbJ6L457pJIhw/exec';
+const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzTF3u6BWsagGAguq3PwlBTigGiNXhlHnvFGjXy5ydL11vmJxaxaud3ikbqRPMSZoDolg/exec';
 
             const response = await fetch(GAS_ENDPOINT, {
                 method: 'POST',
