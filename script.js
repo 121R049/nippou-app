@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // GAS エンドポイント（環境変数として管理することを推奨）
-        const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxVfcU9H5lgPBzaUMQsz-aIQ7m0ggKBfLlep0E18CrRgsU4LNDShIUNa-upgsqonQLWsw/exec';
+        const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyxMRO4mcCCBqHeaK5qEKWfthi_IWxPAFavtoB0t2gb-xa6dWeMgD1kWxiB9E1Zqu4Fzg/exec';
 
         // 方法1: XMLHttpRequest（現在の実装 - CORSエラーが発生する場合）
         sendViaXHR(formData, GAS_ENDPOINT);
