@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const params = new URLSearchParams(formData).toString();
 
         const xhr = new XMLHttpRequest();
-        const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxVfcU9H5lgPBzaUMQsz-aIQ7m0ggKBfLlep0E18CrRgsU4LNDShIUNa-upgsqonQLWsw/exec';
+        const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzTF3u6BWsagGAguq3PwlBTigGiNXhlHnvFGjXy5ydL11vmJxaxaud3ikbqRPMSZoDolg/exec';
 
         xhr.open("POST", GAS_ENDPOINT, true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
