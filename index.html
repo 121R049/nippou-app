@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日報WebApp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4285f4">
+    <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 日報WebApp</h1>
+        </header>
+
+        <main>
+            <form id="nippouForm" class="nippou-form">
+                <div class="form-group">
+                    <label for="name">お名前 <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">日付 <span class="required">*</span></label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="time-group">
+                    <div class="form-group">
+                        <label for="startTime">開始時刻 <span class="required">*</span></label>
+                        <input type="time" id="startTime" name="startTime" value="08:00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">終了時刻 <span class="required">*</span></label>
+                        <input type="time" id="endTime" name="endTime" value="17:00" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="workContent">業務内容 <span class="required">*</span></label>
+                    <textarea id="workContent" name="workContent" rows="6" placeholder="今日の業務内容を記入してください" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="memo">メモ（任意）</label>
+                    <textarea id="memo" name="memo" rows="3" placeholder="気づいたことや明日の予定など"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">📤 日報を送信</span>
+                </button>
+            </form>
+
+            <div id="message" class="message"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
