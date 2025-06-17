@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         const params = new URLSearchParams(formData).toString();
-
         const xhr = new XMLHttpRequest();
         const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxVJEvHE1U3TMLHwzLqqsqG9heKz4Ha86-SVJrrHq_0eTe-ZZvBLkRQ0tH3yhWZcB07SA/exec';
 
