@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const formData = {
             name: document.getElementById('name').value,
+            worksite: document.getElementById('worksite').value,
             date: document.getElementById('date').value,
             startTime: document.getElementById('startTime').value,
             endTime: document.getElementById('endTime').value,
