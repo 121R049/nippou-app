@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     '吉田広司': 'yoshida@example.com',
     '加藤': 'kato@example.com',
     '前田': 'maeda@example.com',
-    'カイボウ': 'kaibou@example.com',
-    '智之': 'tomoyuki@example.com'
+    'カイボウ': 'namazu20030309@gmail.com',
+    '智之': 'goodgardenhp@gmail.com'
 };
 
  const nameSelect = document.getElementById('name');
