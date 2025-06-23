@@ -4,6 +4,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const formattedDate = today.toISOString().split('T')[0];
     dateInput.value = formattedDate;
 
+    const emailMap = {
+    '関': 'seki@example.com',
+    '山岸': 'yamagishi@example.com',
+    '黒川': 'kurokawa@example.com',
+    'きみさん': 'kimisan@example.com',
+    '下羽': 'shimoba@example.com',
+    '若狭': 'wakasa@example.com',
+    '山崎': 'yamazaki@example.com',
+    '吉田広司': 'yoshida@example.com',
+    '加藤': 'kato@example.com',
+    '前田': 'maeda@example.com',
+    'カイボウ': 'kaibou@example.com',
+    '智之': 'tomoyuki@example.com'
+};
+
+ const nameSelect = document.getElementById('name');
+    const emailHiddenInput = document.getElementById('email');
+
+    nameSelect.addEventListener('change', function () {
+        const selectedName = this.value;
+        const email = emailMap[selectedName] || '';
+        emailHiddenInput.value = email;
+    });
+    
     const form = document.getElementById('nippouForm');
     const submitBtn = form.querySelector('.submit-btn');
     const messageDiv = document.getElementById('message');
@@ -18,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const formData = {
             name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
             worksite: document.getElementById('worksite').value,
             date: document.getElementById('date').value,
             startTime: document.getElementById('startTime').value,
