@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     dateInput.value = formattedDate;
 
     const emailMap = {
-    '関': 'ringo724@gmail.com',
+    '関': 'rinngo724@gmail.com',
     '山岸': '0tc7wx532pj268n@ezweb.ne.jp',
     '黒川': 'brky88388396@ezweb.ne.jp',
     'きみさん': 'kimi.sakana.turu@docomo.ne.jp',
