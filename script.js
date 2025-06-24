@@ -7,16 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const emailMap = {
     '関': 'seki@example.com',
     '山岸': 'yamagishi@example.com',
-    '黒川': 'kurokawa@example.com',
+    '黒川': 'brky88388396@ezweb.ne.jp',
     'きみさん': 'kimisan@example.com',
     '下羽': 'shimoba@example.com',
-    '若狭': 'wakasa@example.com',
+    '若狭': 'tmw70gf5t8kkvcrrfwst@docomone.jp',
     '山崎': 'yamazaki@example.com',
     '吉田広司': 'yoshida@example.com',
     '加藤': 'kato@example.com',
-    '前田': 'maeda@example.com',
+    '前田': 'connya49@docomo.ne.jp',
     'カイボウ': 'namazu20030309@gmail.com',
-    '智之': 'goodgardenhp@gmail.com'
+    '智之': 'goodgardenseki@ybb.ne.jp'
 };
 
  const nameSelect = document.getElementById('name');
