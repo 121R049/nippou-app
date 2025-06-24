@@ -5,15 +5,15 @@ document.addEventListener('DOMContentLoaded', function () {
     dateInput.value = formattedDate;
 
     const emailMap = {
-    '関': 'seki@example.com',
-    '山岸': 'yamagishi@example.com',
+    '関': 'ringo724@gmail.com',
+    '山岸': '0tc7wx532pj268n@ezweb.ne.jp',
     '黒川': 'brky88388396@ezweb.ne.jp',
-    'きみさん': 'kimisan@example.com',
+    'きみさん': 'kimi.sakana.turu@docomo.ne.jp',
     '下羽': 'shimoba@example.com',
     '若狭': 'tmw70gf5t8kkvcrrfwst@docomone.jp',
-    '山崎': 'yamazaki@example.com',
+    '山崎': 'saburo.y.tara.15@docomo.ne.jp',
     '吉田広司': 'yoshida@example.com',
-    '加藤': 'kato@example.com',
+    '加藤': 'nori-1969-yuki-0211-kato@au.com',
     '前田': 'connya49@docomo.ne.jp',
     'カイボウ': 'namazu20030309@gmail.com',
     '智之': 'goodgardenseki@ybb.ne.jp'
