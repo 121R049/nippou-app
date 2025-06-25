@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     '山岸': '0tc7wx532pj268n@ezweb.ne.jp',
     '黒川': 'brky88388396@ezweb.ne.jp',
     'きみさん': 'kimi.sakana.turu@docomo.ne.jp',
-    '下羽': 'shimoba@example.com',
+    '下羽': 'shitaba1970@gmail.com',
     '若狭': 'tmw70gf5t8kkvcrrfwst@docomone.jp',
     '山崎': 'saburo.y.tara.15@docomo.ne.jp',
     '吉田広司': 'hiroshij391@gmail.com',
