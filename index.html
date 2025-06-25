@@ -77,7 +77,27 @@
             <div id="message" class="message"></div>
         </main>
     </div>
-
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js').then(registration => {
+      if (registration.waiting) {
+        registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+        window.location.reload(); // ← 再読み込み
+      }
+      registration.addEventListener('updatefound', () => {
+        const newWorker = registration.installing;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            newWorker.postMessage({ type: 'SKIP_WAITING' });
+            window.location.reload(); // ← 再読み込み
+          }
+        });
+      });
+    });
+  });
+}
+</script>
     <script src="script.js?v=20250625"></script>
 </body>
 </html>
