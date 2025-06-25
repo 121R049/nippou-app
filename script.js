@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
     'カイボウ': 'namazu20030309@gmail.com',
     '智之': 'goodgardenseki@ybb.ne.jp'
     '智子': 'goodgardenseki@ybb.ne.jp'    
-        
 };
 
  const nameSelect = document.getElementById('name');
