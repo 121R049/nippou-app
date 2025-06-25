@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     '下羽': 'shimoba@example.com',
     '若狭': 'tmw70gf5t8kkvcrrfwst@docomone.jp',
     '山崎': 'saburo.y.tara.15@docomo.ne.jp',
-    '吉田広司': 'yoshida@example.com',
+    '吉田広司': 'hiroshij391@gmail.com',
     '加藤': 'nori-1969-yuki-0211-kato@au.com',
     '前田': 'connya49@docomo.ne.jp',
     'カイボウ': 'namazu20030309@gmail.com',
