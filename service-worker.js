@@ -143,3 +143,10 @@ self.addEventListener('notificationclick', function(event) {
         clients.openWindow('./')
     );
 });
+// 新しいSWを即座に有効にする（index.html からの指示を受け取る）
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+        console.log('Service Worker: SKIP_WAITING を受信、即時有効化');
+        self.skipWaiting();
+    }
+});
