@@ -1,9 +1,9 @@
-const CACHE_NAME = 'nippou-app-v1.0.1';
+const CACHE_NAME = 'nippou-app-v1.0.2';
 const urlsToCache = [
     './',
     './index.html',
     './style.css',
-    './script.js',
+    './script.js?v=20250625',
     './manifest.json',
     './icon.png'
 ];
