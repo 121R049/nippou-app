@@ -21,21 +21,20 @@
     <label for="name">お名前 <span class="required">*</span></label>
     <select id="name" name="name" required>
         <option value="">選択してください</option>
-        <option value="関">関　芳和</option>
-        <option value="山岸">山岸　清彦</option>
-        <option value="黒川">黒川　彰好</option>
-        <option value="きみさん">吉田　喜三次</option>
-        <option value="下羽">下羽 政二</option>
-        <option value="若狭">若狭 道利</option>
-        <option value="山崎">山崎 三郎</option>
-        <option value="吉田広司">吉田広司</option>
-        <option value="加藤">加藤 憲之</option>
-        <option value="前田">前田 良夫</option>
-        <option value="カイボウ">関 海陽</option>
-        <option value="智之">関 智之</option>
-        <option value="智子">関 智子</option>
-    </select>
-                    <input type="hidden" id="email" name="email">
+        <option value="関">関　</option>
+        <option value="山岸">山岸　</option>
+        <option value="黒川">黒川　</option>
+        <option value="きみさん">吉田　</option>
+        <option value="下羽">下羽 </option>
+        <option value="若狭">若狭 </option>
+        <option value="山崎">山崎 </option>
+        <option value="吉田広司">吉田</option>
+        <option value="加藤">加藤 </option>
+        <option value="前田">前田 </option>
+        <option value="カイボウ">陽 </option>
+        <option value="智之">之 </option>
+        <option value="智子">子 </option>
+    </select>                   
 </div>
 
                 <div class="form-group">
@@ -75,6 +74,25 @@
             </form>
 
             <div id="message" class="message"></div>
+<!-- ===== 掲示板ブロックを追加 ===== -->
+      <section id="board" style="margin-top:3rem;">
+        <h2 style="border-left:5px solid #388e3c;padding-left:0.5em;">💬 掲示板</h2>
+
+        <!-- 投稿フォーム -->
+        <form id="postForm" style="margin-bottom:1.5rem;">
+          <select id="category">
+            <option value="お知らせ">📢 お知らせ</option>
+            <option value="連絡事項">📞 連絡事項</option>
+            <option value="その他">💬 その他</option>
+          </select>
+          <input id="poster" type="text" placeholder="投稿者名" required>
+          <textarea id="content" rows="3" placeholder="投稿内容" required></textarea>
+          <button type="submit">投稿する</button>
+        </form>
+
+        <!-- 投稿一覧 -->
+        <div id="posts"></div>
+      </section>
         </main>
     </div>
 <script>
@@ -99,5 +117,59 @@ if ('serviceWorker' in navigator) {
 }
 </script>
     <script src="script.js?v=20250625"></script>
+ <!-- ===== Firebase 掲示板用 ===== -->
+  <script type="module">
+    /* ▼ Firebase SDK 読み込み */
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyABfhsh7rmgVd9wsXHKIHmxsV7uo8KRMzY",
+  authDomain: "goodboard-3f9c3.firebaseapp.com",
+  databaseURL: "https://goodboard-3f9c3-default-rtdb.firebaseio.com",
+  projectId: "goodboard-3f9c3",
+  storageBucket: "goodboard-3f9c3.appspot.com",
+  messagingSenderId: "287644765073",
+  appId: "1:287644765073:web:41795c1b85e929a1126830"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getDatabase(app);
+const postsRef = ref(db, "posts");
+
+    /* ▼ 投稿フォーム送信 */
+    document.getElementById("postForm").addEventListener("submit", e => {
+      e.preventDefault();
+      
+ // ここで要素を取得して変数に入れる
+  const categoryEl = document.getElementById("category");
+  const posterEl   = document.getElementById("poster");
+  const contentEl  = document.getElementById("content");
+      const data = {
+        category : categoryEl.value,
+        poster   : posterEl.value,
+        content  : contentEl.value,
+        ts       : Date.now()
+      };
+      push(postsRef, data);   // Firebase に保存
+      e.target.reset();
+    });
+
+    /* ▼ 追加された投稿を画面に描画 */
+    const postsDiv = document.getElementById("posts");
+    onChildAdded(postsRef, snap => {
+      const d = snap.val();
+      const div = document.createElement("div");
+      div.className = "post-item";
+      div.innerHTML = `
+        <strong>${d.category} | ${d.poster}</strong>
+        <p>${d.content}</p>
+        <time>${new Date(d.ts).toLocaleString("ja-JP")}</time>
+        <hr>
+      `;
+      postsDiv.prepend(div);
+    });
+  </script>
+
 </body>
 </html>
