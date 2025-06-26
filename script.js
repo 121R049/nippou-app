@@ -2,33 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const dateInput = document.getElementById('date');
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
-    dateInput.value = formattedDate;
-
-    const emailMap = {
-    '関': 'rinngo724@gmail.com',
-    '山岸': '0tc7wx532pj268n@ezweb.ne.jp',
-    '黒川': 'brky88388396@ezweb.ne.jp',
-    'きみさん': 'kimi.sakana.turu@docomo.ne.jp',
-    '下羽': 'shitaba1970@gmail.com',
-    '若狭': 'tmw70gf5t8kkvcrrfwst@docomone.jp',
-    '山崎': 'saburo.y.tara.15@docomo.ne.jp',
-    '吉田広司': 'hiroshij391@gmail.com',
-    '加藤': 'nori-1969-yuki-0211-kato@au.com',
-    '前田': 'connya49@docomo.ne.jp',
-    'カイボウ': 'namazu20030309@gmail.com',
-    '智之': 'goodgardenseki@ybb.ne.jp',
-    '智子': 'goodgardenseki@ybb.ne.jp'    
-};
-
- const nameSelect = document.getElementById('name');
-    const emailHiddenInput = document.getElementById('email');
-
-    nameSelect.addEventListener('change', function () {
-        const selectedName = this.value;
-        const email = emailMap[selectedName] || '';
-        emailHiddenInput.value = email;
-    });
-    
+    dateInput.value = formattedDate;      
     const form = document.getElementById('nippouForm');
     const submitBtn = form.querySelector('.submit-btn');
     const messageDiv = document.getElementById('message');
@@ -43,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const formData = {
             name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
             worksite: document.getElementById('worksite').value,
             date: document.getElementById('date').value,
             startTime: document.getElementById('startTime').value,
