@@ -47,16 +47,16 @@
                     <input type="date" id="date" name="date" required>
                 </div>
 
-                <div class="time-group">
-                    <div class="form-group">
-                        <label for="startTime">開始時刻 <span class="required">*</span></label>
-                        <input type="time" id="startTime" name="startTime" value="08:00" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="endTime">終了時刻 <span class="required">*</span></label>
-                        <input type="time" id="endTime" name="endTime" value="17:00" required>
-                    </div>
+        <div class="time-group">
+             <div class="form-group">
+              <label for="startTime">開始時刻 <span class="required">*</span></label>
+              <input type="time" id="startTime" name="startTime" value="08:00" required step="3600">
+             </div>
+          <div class="form-group">
+                <label for="endTime">終了時刻 <span class="required">*</span></label>
+                <input type="time" id="endTime" name="endTime" value="17:00" required step="3600">
                 </div>
+            </div>
 
                 <div class="form-group">
                     <label for="workContent">業務内容 <span class="required">*</span></label>
@@ -169,6 +169,13 @@ const postsRef = ref(db, "posts");
       `;
       postsDiv.prepend(div);
     });
+const timeInputs = [document.getElementById("startTime"), document.getElementById("endTime")];
+  timeInputs.forEach(input => {
+    input.addEventListener("change", () => {
+      let [h, m] = input.value.split(":");
+      input.value = `${h.padStart(2, "0")}:00`;
+    });
+  });
   </script>
 
 </body>
